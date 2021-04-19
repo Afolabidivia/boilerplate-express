@@ -7,6 +7,11 @@ var bGround = require('fcc-express-bground');
 var myApp = require('./myApp');
 var express = require('express');
 var app = express();
+app.get('/', (req, res) => res.status(200).json({message: "We here"}));
+
+// app.use(function (req, res, next) {
+//   res.status(404).send("Sorry can't find that!")
+// })
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
